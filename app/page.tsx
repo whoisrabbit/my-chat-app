@@ -8,7 +8,7 @@ export default function Home() {
         <div className="flex items-center justify-center gap-3 mb-6">
           <Logo />
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-            Nexus
+            InBuddy
           </h1>
         </div>
         <Chat />

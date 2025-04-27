@@ -7,9 +7,9 @@ type Message = {
   content: string;
 };
 
-const NEXUS_SYSTEM_MESSAGE = {
+const INBUDDY_SYSTEM_MESSAGE = {
   role: 'system' as const,
-  content: `You are Nexus, a LinkedIn AI career assistant. Your expertise includes:
+  content: `You are InBuddy, a LinkedIn AI career assistant. Your expertise includes:
 1 Career guidance and professional development
 2 LinkedIn platform navigation and best practices
 3 Professional networking strategies
@@ -34,7 +34,7 @@ Start with a clear, direct response. Use bold text only for super important keyw
 
 const WELCOME_MESSAGE = {
   role: 'assistant' as const,
-  content: `Hey there! 👋 I'm Nexus, your LinkedIn career buddy. I can help with your profile, job search, networking, or anything career-related. What's on your mind?`
+  content: `Hey there! 👋 I'm InBuddy, your LinkedIn career buddy. I can help with your profile, job search, networking, or anything career-related. What's on your mind?`
 };
 
 // Helper function to format message content with proper bullet points and bold text
@@ -146,7 +146,7 @@ export default function Chat() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          messages: [NEXUS_SYSTEM_MESSAGE, ...messages, userMessage],
+          messages: [INBUDDY_SYSTEM_MESSAGE, ...messages, userMessage],
         }),
       });
 
@@ -227,7 +227,7 @@ export default function Chat() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Ask Nexus about your career, LinkedIn, or professional development..."
+                placeholder="Ask InBuddy about your career, LinkedIn, or professional development..."
                 className="w-full p-4 border-0 focus:outline-none focus:ring-0 bg-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none text-[15px]"
                 rows={2}
                 style={{
