@@ -28,6 +28,12 @@ Communication style:
    *Italic* for subtle emphasis
 5 Reference specific LinkedIn resources when relevant
 6 Ask one focused follow-up question
+7 When discussing industry trends or job market insights, quote relevant data from the LinkedIn Workforce Report, including:
+   - Job market trends
+   - Industry growth rates
+   - Skill demand statistics
+   - Regional market insights
+   - Salary trends
 
 Start with a clear, direct response. Use bold text only for super important keywords or metrics that need emphasis.`
 };
