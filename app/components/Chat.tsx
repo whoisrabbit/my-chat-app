@@ -62,37 +62,46 @@ const formatMessageContent = (content: string) => {
               // Remove the bullet point character and trim
               const bulletContent = line.replace(/^[-•*]\s+/, '').trim();
               if (bulletContent) {
-                return <li key={lineIndex}>{formatBoldText(bulletContent)}</li>;
+                return <li key={lineIndex}>{formatLinks(bulletContent)}</li>;
               }
               return null;
             })}
           </ul>
         );
       }
-      // Return regular paragraph with bold formatting
-      return <p key={index} className="my-2">{formatBoldText(paragraph)}</p>;
+      // Return regular paragraph with link formatting
+      return <p key={index} className="my-2">{formatLinks(paragraph)}</p>;
     });
   }
   
-  // If no bullet points, return the content with bold formatting
-  return formatBoldText(content);
+  // If no bullet points, return the content with link formatting
+  return formatLinks(content);
 };
 
-// Helper function to format bold text with ** markers
-const formatBoldText = (text: string) => {
-  if (!text.includes('**')) {
-    return text;
-  }
-  
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+// Helper function to format markdown links
+const formatLinks = (text: string) => {
+  // Match markdown links [text](url)
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = text.split(linkRegex);
   
   return parts.map((part, index) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      // Remove the ** markers and wrap in strong tag
-      const boldText = part.slice(2, -2);
-      return <strong key={index} className="font-bold">{boldText}</strong>;
+    if (index % 3 === 1) { // This is the link text
+      const url = parts[index + 1];
+      return (
+        <a 
+          key={index} 
+          href={url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 underline"
+        >
+          {part}
+        </a>
+      );
+    } else if (index % 3 === 2) { // This is the URL, skip it
+      return null;
     }
-    return part;
+    return part; // This is regular text
   });
 };
 
