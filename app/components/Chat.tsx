@@ -24,8 +24,7 @@ Communication style:
 • Use bullet points for lists
 • Limit lists to maximum 3 points
 • Use text formatting sparingly:
-   **Bold** only for critical keywords or metrics
-   *Italic* for subtle emphasis
+   *Italic* for subtle emphasis only
 • Reference specific LinkedIn resources when relevant
 • Ask one focused follow-up question
 • When discussing industry trends or job market insights, quote relevant data from the latest LinkedIn Workforce Report (February 2025) at https://economicgraph.linkedin.com/resources/linkedin-workforce-report-february-2025, including:
@@ -35,8 +34,9 @@ Communication style:
    - Regional market insights and metro area data
    - Salary trends and compensation insights
    - Always cite the source as "LinkedIn Workforce Report | United States | February 2025"
+• When referencing URLs in responses, format them as clickable links using markdown: [link text](url)
 
-Start with a clear, direct response. Use bold text only for super important keywords or metrics that need emphasis.`
+Start with a clear, direct response.`
 };
 
 const WELCOME_MESSAGE = {
